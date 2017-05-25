@@ -12,6 +12,7 @@ ENV MESOS_NATIVE_LIBRARY=/usr/local/lib/libmesos.so \
     MESOS_NATIVE_JAVA_LIBRARY=/usr/local/lib/libmesos.so
 
 COPY kafka.yml /config/kafka.yml
+COPY dropwizard-prometheus-0.0.1-SNAPSHOT.jar /jars/dropwizard-prometheus-0.0.1-SNAPSHOT.jar
 ADD https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/0.9/jmx_prometheus_javaagent-0.9.jar /jars
 
-RUN chmod 444 /jars/* && chmod 444 /config/*
+RUN chmod 444 /jars/* /config/*
